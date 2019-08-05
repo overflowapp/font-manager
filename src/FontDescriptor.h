@@ -157,10 +157,11 @@ private:
   
   bool getBool(Local<Object> obj, const char *name) {
     Nan::HandleScope scope;
+    v8::Isolate *isolate = v8::Isolate::GetCurrent();
     MaybeLocal<Value> value = Nan::Get(obj, Nan::New<String>(name).ToLocalChecked());
 
     if (!value.IsEmpty() && value.ToLocalChecked()->IsBoolean()) {
-      return value.ToLocalChecked()->BooleanValue(Nan::GetCurrentContext()).FromJust();
+      return value.ToLocalChecked()->BooleanValue(isolate);
     }
     
     return false;
