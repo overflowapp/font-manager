@@ -1,6 +1,6 @@
 {
-  "name": "font-scanner",
-  "version": "0.1.2",
+  "name": "@protoio-labs/font-scanner",
+  "version": "0.1.3",
   "description": "Provides access to the system font catalog",
   "main": "index.js",
   "dependencies": {
